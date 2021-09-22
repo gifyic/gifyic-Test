@@ -1,0 +1,13 @@
+name: text
+
+on:
+  workflow_dispatch:
+    inputs:
+      ROM_URL:
+        description: 'GSI'
+        required: true
+        default: ''
+        
+env: 
+  TZ: Asia/Shanghai
+  
