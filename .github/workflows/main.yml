@@ -21,7 +21,7 @@ jobs:
         
       - name: Execute GSI.sh
         run: |
-          chmod +x GSI.sh && ./GSI.
+          chmod +x GSI.sh && ./GSI.sh
           
       - name: GSI
         run: |
