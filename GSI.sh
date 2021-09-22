@@ -1,9 +1,10 @@
 #!/bin/bash
-#更新软件列表及软件
+echo "------------ Update software list and software ------------"
 sudo apt update && sudo apt upgrade -y
-#获取工具 ErfanGSIs
+echo "------------ clone ErfanGSIs ------------"
 git clone --recurse-submodules https://github.com/erfanoabdi/ErfanGSIs.git
 cd ErfanGSIs
-#setup.sh
+echo "------------ Execute setup.sh ------------"
 sudo bash setup.sh
+
 
