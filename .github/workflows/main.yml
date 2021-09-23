@@ -57,4 +57,4 @@ jobs:
       - name: upload aliyunpan
         run: |
           cd $GITHUB_WORKSPACE
-          sudo chmod +x aliyunpan.sh && sudo sh aliyunpan.sh
+          chmod +x aliyunpan.sh && sh aliyunpan.sh
