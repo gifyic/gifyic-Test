@@ -38,6 +38,6 @@ jobs:
       - name: GSI
         run: |
           cd ./ErfanGSIs
-          sudo bash ./url2GSI.sh https://bigota.d.miui.com/21.4.22/miui_VIOLET_21.4.22_904fe2ee16_10.0.zip MIUI
+          sudo bash ./url2GSI.sh ${{ github.event.inputs.ROM_URL }} MIUI
 
       
