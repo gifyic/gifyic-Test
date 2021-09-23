@@ -4,10 +4,22 @@ on:
   workflow_dispatch:
     inputs:
       ROM_URL:
-        description: 'GSI'
+        description: 'Rom_name'
         required: true
-        default: ''
-        
+        default: 'https://bigota.d.miui.com/21.4.22/miui_VIOLET_21.4.22_904fe2ee16_10.0.zip'
+      ROM_device:
+        description: 'Rom_device'
+        required: true
+        default: 'Redmi Note7 Pro'
+      OS_TYPE:
+        description: 'OS_type'
+        required: true
+        default: 'MIUI'
+      ROM_NAME:
+        description: 'Rom_name'
+        required: true
+        default: 'GSI_VIOLET_21.4.22_10.0.zip'
+      
 env: 
   TZ: Asia/Shanghai
   
