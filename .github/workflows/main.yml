@@ -31,7 +31,6 @@ env:
   ROM_NAME: ${{ github.event.inputs.ROM_NAME }}
   GSI_TYPE: ${{ github.event.inputs.GSI_TYPE }}
   OS_TYPE: ${{ github.event.inputs.OS_TYPE }}
-  ali: ${{ secrets.ALI }}
   
 jobs:
   build:
@@ -59,8 +58,3 @@ jobs:
         run: |
           cd $GITHUB_WORKSPACE
           sudo chmod +x aliyunpan.sh && sudo sh aliyunpan.sh
-          cd aliyundrive-uploader
-          echo -e $ali > config.json
-          cat config.json
-
-      
