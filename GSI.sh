@@ -13,8 +13,8 @@ echo "------------ Execute setup.sh ------------"
 sudo bash setup.sh
 echo "------------ Compressed output file ------------ "
 cd $GITHUB_WORKSPACE/ErfanGSIs
-mkdir ${{ github.event.inputs.ROM_device }}
-cd ${{ github.event.inputs.ROM_device }}
-zip -q -r ${{ github.event.inputs.ROM_NAME }} $GITHUB_WORKSPACE/ErfanGSIs/output
+mkdir "${{ github.event.inputs.ROM_device }}"
+cd "${{ github.event.inputs.ROM_device }}"
+zip -q -r "${{ github.event.inputs.ROM_NAME }}" "$GITHUB_WORKSPACE/ErfanGSIs/output"
 
 
