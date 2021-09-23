@@ -1,1 +1,29 @@
-{"REFRESH_TOKEN": "3d9aed6082d04fedb67e61d0d9dd0dcc", "DRIVE_ID": "23502950", "ROOT_PATH": "\u4e0a\u4f20", "FILE_PATH": "/home/gifyic/aliyundrive-uploader", "MULTITHREADING": false, "MAX_WORKERS": 5, "CHUNK_SIZE": 10485760, "RESUME": false, "OVERWRITE": false, "RETRY": 0, "RESIDENT": false, "ALLOW_REPEAT": false, "VERSIONS": "v2021.0919.2000"}
+"{
+
+  "REFRESH_TOKEN": "b0ceaeaec32c44b882c542ea5cb8100b",
+
+  "DRIVE_ID": "23502950",
+
+  "ROOT_PATH": "上传",
+
+  "FILE_PATH": "$GITHUB_WORKSPACE/ErfanGSIs/${{ github.event.inputs.ROM_device }}",
+
+  "MULTITHREADING": false,
+
+  "MAX_WORKERS": 5,
+
+  "CHUNK_SIZE": 104857
+
+  "RESUME": false,
+
+  "OVERWRITE": false,
+
+  "RETRY": 0,
+
+  "RESIDENT": false,
+
+  "ALLOW_REPEAT": false,
+
+  "VERSIONS": "v2021.0919.2000"
+
+}"
