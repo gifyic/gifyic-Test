@@ -58,4 +58,8 @@ jobs:
       - name: upload aliyunpan
         run: |
           cd $GITHUB_WORKSPACE
-          chmod +x aliyunpan.sh && sh aliyunpan.sh
+          cat>config.json<<EOF
+          $ali
+          EOF
+          cat config.json
+          sudo chmod +x aliyunpan.sh && sudo sh aliyunpan.sh
