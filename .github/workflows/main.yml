@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       ROM_URL:
-        description: 'Rom_name'
+        description: 'Rom_url'
         required: true
         default: 'https://bigota.d.miui.com/21.4.22/miui_VIOLET_21.4.22_904fe2ee16_10.0.zip'
       ROM_device:
