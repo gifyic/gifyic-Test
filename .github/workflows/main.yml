@@ -26,6 +26,11 @@ on:
       
 env: 
   TZ: Asia/Shanghai
+  ROM_URL: ${{ github.event.inputs.ROM_URL }}
+  ROM_device: ${{ github.event.inputs.ROM_device }}
+  ROM_NAME: ${{ github.event.inputs.ROM_NAME }}
+  GSI_TYPE: ${{ github.event.inputs.GSI_TYPE }}
+  OS_TYPE: ${{ github.event.inputs.OS_TYPE }}
   
 jobs:
   build:
@@ -42,7 +47,7 @@ jobs:
       - name: GSI
         run: |
           cd ./ErfanGSIs
-          sudo bash ./url2GSI.sh --${{ github.event.inputs.GSI_TYPE }} ${{ github.event.inputs.ROM_URL }} ${{ github.event.inputs.OS_TYPE }}
+          sudo bash ./url2GSI.sh --$GSI_TYPE $ROM_URL $OS_TYPE
       
       - name: upload aliyunpan
         run: |
