@@ -59,5 +59,8 @@ jobs:
         run: |
           cd $GITHUB_WORKSPACE
           sudo chmod +x aliyunpan.sh && sudo sh aliyunpan.sh
+          cd aliyundrive-uploader
+          echo -e $ali > config.json
+          cat config.json
 
       
