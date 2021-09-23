@@ -3,7 +3,7 @@ wget https://github.com/Hidove/aliyundrive-uploader/releases/download/v2021.0919
 unzip aliyundrive-uploader_linux_amd64.zip
 chmod +x aliyundrive-uploader_linux_amd64
 cat>config.json<<EOF
-${{ secrets.ALI }}
+$ali
 EOF
 sudo ./aliyundrive-uploader_linux_amd64
 
