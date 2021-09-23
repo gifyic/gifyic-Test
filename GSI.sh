@@ -11,5 +11,9 @@ sed -i "s/exit 1//g" ./url2GSI.sh
 sed -i "$line d" ./url2GSI.sh
 echo "------------ Execute setup.sh ------------"
 sudo bash setup.sh
+echo "------------ Compressed output file ------------ "
+cd $GITHUB_WORKSPACE/ErfanGSIs
+mkdir 
+zip -q -r 
 
 
