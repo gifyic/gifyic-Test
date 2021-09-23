@@ -1,5 +1,4 @@
 #!/bin/bash
-cd $GITHUB_WORKSPACE/ErfanGSIs
 git clone https://github.com/Hidove/aliyundrive-uploader.git
 cd aliyundrive-uploader
 pip install -r requirements.txt
