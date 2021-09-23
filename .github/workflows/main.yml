@@ -10,7 +10,7 @@ on:
       ROM_device:
         description: 'Rom_device'
         required: true
-        default: 'Redmi Note7 Pro'
+        default: 'Redmi_Note7_Pro'
       OS_TYPE:
         description: 'OS_type'
         required: true
