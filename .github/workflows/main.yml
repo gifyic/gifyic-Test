@@ -19,6 +19,10 @@ on:
         description: 'Rom_name'
         required: true
         default: 'GSI_VIOLET_21.4.22_10.0.zip'
+      GSI_TYPE:
+        description: 'ab or aonly'
+        required: true
+        default: 'ab'
       
 env: 
   TZ: Asia/Shanghai
@@ -38,6 +42,7 @@ jobs:
       - name: GSI
         run: |
           cd ./ErfanGSIs
-          sudo bash ./url2GSI.sh ${{ github.event.inputs.ROM_URL }} MIUI
+          sudo bash ./url2GSI.sh --${{ github.event.inputs.GSI_TYPE }} ${{ github.event.inputs.ROM_URL }} ${{ github.event.inputs.OS_TYPE }}
+          
 
       
