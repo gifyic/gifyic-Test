@@ -66,4 +66,4 @@ jobs:
           echo "refresh_token: ${{ secrets.ALI }}"  >  ~/.config/aliyunpan.yaml
           aliyunpan-cli ls
           aliyunpan-cli r
-          aliyunpan-cli u $GITHUB_WORKSPACE/$ROM_device Github_Actions
+          aliyunpan-cli u Redmi_Note7_Pro Github_Actions
