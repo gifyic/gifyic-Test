@@ -58,7 +58,7 @@ jobs:
           cd ..
           ls
       
-      - name: upload aliyunpan
+      - name: upload onedrive
         run: |
           cd $GITHUB_WORKSPACE
            wget https://github.com/gaowanliang/LightUploader/releases/download/v2.0.1/LightUploader_Linux_x86_64.tar.gz && tar -xzvf LightUploader_Linux_x86_64.tar.gz
