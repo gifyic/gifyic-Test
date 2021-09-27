@@ -69,6 +69,8 @@ jobs:
       - name: upload aliyunpan
         run: |  
           cd  $GITHUB_WORKSPACE
+          ls
+          pip install aliyunpan
           echo "refresh_token: ${{ secrets.ALI }}"  >  ~/.config/aliyunpan.yaml
           aliyunpan-cli ls
           aliyunpan-cli r
