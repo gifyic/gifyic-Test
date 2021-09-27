@@ -53,7 +53,7 @@ jobs:
           cd $GITHUB_WORKSPACE
           mkdir $ROM_device
           cd $ROM_device
-          mv $GITHUB_WORKSPACE/ErfanGSIs/output* .
+          sudo mv $GITHUB_WORKSPACE/ErfanGSIs/output* .
           echo "----------------------------"
           cd ..
           ls
