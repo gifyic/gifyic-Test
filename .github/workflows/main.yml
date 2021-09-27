@@ -61,9 +61,7 @@ jobs:
       - name: upload aliyunpan
         run: |
           cd $GITHUB_WORKSPACE
-          ls
-          pip install aliyunpan
-          echo "refresh_token: ${{ secrets.ALI }}"  >  ~/.config/aliyunpan.yaml
-          aliyunpan-cli ls
-          aliyunpan-cli r
-          aliyunpan-cli u Redmi_Note7_Pro Github_Actions
+           wget https://github.com/gaowanliang/LightUploader/releases/download/v2.0.1/LightUploader_Linux_x86_64.tar.gz && tar -xzvf LightUploader_Linux_x86_64.tar.gz
+           chmod +x LightUploader
+           unzip -P ${{ secrets.PASSWD }} config.zip
+           ./LightUploader -c actions@fuckod.onmicrosoft.com.json -t 32 -f "$ROM_device" -r "Github Actions"        
