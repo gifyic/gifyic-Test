@@ -50,7 +50,7 @@ jobs:
           cd ./ErfanGSIs
           sudo bash ./url2GSI.sh --$GSI_TYPE $ROM_URL $OS_TYPE
           echo "------------ Compressed output file ------------ "
-          cd $GITHUB_WORKSPACE/ErfanGSIs
+          cd $GITHUB_WORKSPACE
           mkdir $ROM_device
           cd $ROM_device
           zip -q -r $ROM_NAME $GITHUB_WORKSPACE/ErfanGSIs/output
