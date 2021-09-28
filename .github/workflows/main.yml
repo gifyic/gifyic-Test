@@ -48,6 +48,7 @@ env:
   Ali_Upload: ${{ github.event.inputs.Ali_Upload }}
   Onedrive: ${{ github.event.inputs.Onedrive }}
   GSI: ${{ github.event.inputs.GSI }}
+  
 jobs:
   build:
     runs-on: ubuntu-20.04
@@ -57,17 +58,17 @@ jobs:
         uses: actions/checkout@main
         
       - name: Execute GSI.sh
-        if: $GSI == 'y'
+        if: ${{ github.event.inputs.GSI }} == 'y'
         run: |
           chmod +x GSI.sh && ./GSI.sh
           
       - name: upload onedrive
-        if: $Onedrive == 'y'
+        if: ${{ github.event.inputs.Onedrive }} == 'y'
         run: |
           chmod +x Upload/Upload_OneDrive.sh && ./Upload_OneDrive.sh
         
       - name: upload aliyunpan
-        if: $Ali_Upload == 'y'
+        if: ${{ github.event.inputs.Ali_Upload }} == 'y'
         run: |  
           chmod +x Upload/Upload_Aliyunpan.sh && ./Upload_Aliyunpan.sh
             
