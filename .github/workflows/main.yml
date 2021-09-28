@@ -31,6 +31,11 @@ on:
         description: 'Upload_od'
         required: true
         default: 'y/n'
+      GSI:
+        description: 'GSI'
+        required: true
+        default: 'y/n'
+      
       
 env: 
   TZ: Asia/Shanghai
@@ -52,12 +57,17 @@ jobs:
         uses: actions/checkout@main
         
       - name: Execute GSI.sh
+        if: $GSI == 'y'
         run: |
           chmod +x GSI.sh && ./GSI.sh
           
       - name: upload onedrive
+        if: $Onedrive == 'y'
         run: |
+          chmod +x Upload/Upload_OneDrive.sh && ./Upload_OneDrive.sh
         
       - name: upload aliyunpan
+        if: $Ali == 'y'
         run: |  
+          chmod +x Upload/Upload_Aliyunpan.sh && ./Upload_Aliyunpan.sh
             
