@@ -2,7 +2,7 @@
 cd  $GITHUB_WORKSPACE
 ls
 pip install aliyunpan
-echo "refresh_token: ${{ secrets.ALI }}"  >  ~/.config/aliyunpan.yaml
+echo "refresh_token: $ali"  >  ~/.config/aliyunpan.yaml
 #Start Upload
 aliyunpan-cli ls
 aliyunpan-cli r
