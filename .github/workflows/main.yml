@@ -68,6 +68,8 @@ jobs:
         run: |
           if [ "$Onedrive" = y ];then
               chmod +x Upload/Upload_OneDrive.sh && ./Upload/Upload_OneDrive.sh
+          else
+             echo "\e[1;32m你没有选择上传onedrive哦,跳过上传\e[0m"
           fi
           chmod +x Upload/Upload_Onedrive_rclone.sh && ./Upload/Upload_Onedrive_rclone.sh
           
@@ -76,4 +78,6 @@ jobs:
         run: | 
           if [ "$Ali_Upload" = y ];then
               chmod +x Upload/Upload_Aliyunpan.sh && ./Upload/Upload_Aliyunpan.sh
+          else
+              echo "\e[1;32m你没有选择上传阿里云盘哦,跳过上传\e[0m"
           fi
