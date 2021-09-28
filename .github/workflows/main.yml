@@ -24,17 +24,17 @@ on:
         required: true
         default: 'ab'
       Ali_Upload:
-        description: 'Upload_Ali'
+        description: 'Upload_Ali(y or n)'
         required: true
-        default: 'y/n'
+        default: 'y'
       Onedrive:
-        description: 'Upload_od'
+        description: 'Upload_od(y or n)'
         required: true
-        default: 'y/n'
+        default: 'y'
       GSI:
         description: 'GSI'
         required: true
-        default: 'y/n'
+        default: 'y'
       
       
 env: 
@@ -60,12 +60,18 @@ jobs:
         
       - name: Execute GSI.sh
         run: |
-          chmod +x GSI.sh && ./GSI.sh
+          if [ "$GSI" = y ];then
+              chmod +x GSI.sh && ./GSI.sh
+          fi
           
       - name: upload onedrive
         run: |
-          chmod +x Upload/Upload_OneDrive.sh && ./Upload/Upload_OneDrive.sh
-        
+          if [ "$Onedrive" = y ];then
+              chmod +x Upload/Upload_OneDrive.sh && ./Upload/Upload_OneDrive.sh
+          fi
+          
       - name: upload aliyunpan
-        run: |  
-          chmod +x Upload/Upload_Aliyunpan.sh && ./Upload/Upload_Aliyunpan.sh
+        run: | 
+          if [ "$Ali_Upload" = y ];then
+              chmod +x Upload/Upload_Aliyunpan.sh && ./Upload/Upload_Aliyunpan.sh
+          fi
