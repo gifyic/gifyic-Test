@@ -3,6 +3,10 @@ name: text
 on:
   workflow_dispatch:
     inputs:
+      GSI:
+        description: 'GSI(y or n)'
+        required: true
+        default: 'y'
       ROM_URL:
         description: 'Rom_url'
         required: true
@@ -31,8 +35,8 @@ on:
         description: 'Upload_od(y or n)'
         required: true
         default: 'y'
-      GSI:
-        description: 'GSI'
+      wenshushu:
+        description: 'Upload_wenshushu(y or n)'
         required: true
         default: 'y'
       
@@ -49,6 +53,7 @@ env:
   Onedrive: ${{ github.event.inputs.Onedrive }}
   GSI: ${{ github.event.inputs.GSI }}
   OD: ${{ secrets.PASSWD }}
+  wenshushu:  ${{ github.event.wenshushu }}
   
 jobs:
   build:
@@ -86,7 +91,7 @@ jobs:
           
       - name: Upload wenshushu
         run: |
-          if [ "$Ali_Upload" = y ];then
+          if [ "$wenshushu" = y ];then
               chmod +x Upload/Upload_wenshushu.sh && ./Upload/Upload_wenshushu.sh
           else
               echo -e "\e[1;32m你没有选择上传到文叔叔哦,跳过上传\e[0m"
