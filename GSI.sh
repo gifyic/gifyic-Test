@@ -11,5 +11,11 @@ sed -i "s/exit 1//g" ./url2GSI.sh
 sed -i "$line d" ./url2GSI.sh
 echo "------------ Execute setup.sh ------------"
 sudo bash setup.sh
-
-
+sudo bash ./url2GSI.sh --$GSI_TYPE $ROM_URL $OS_TYPE
+cd ..
+mkdir $ROM_device
+cd $ROM_device
+sudo mv $GITHUB_WORKSPACE/ErfanGSIs/output* .
+echo "----------------------------"
+cd ..
+ls
