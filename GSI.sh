@@ -15,7 +15,7 @@ sudo bash ./url2GSI.sh --$GSI_TYPE $ROM_URL $OS_TYPE
 cd ..
 mkdir $ROM_device
 cd $ROM_device
-sudo mv $GITHUB_WORKSPACE/ErfanGSIs/output* .
+zip -q -r $ROM_NAME $GITHUB_WORKSPACE/ErfanGSIs/output
 sudo mv $GITHUB_WORKSPACE/ErfanGSIs/output/*.txt ./head.md
 echo "----------------------------"
 cd ..
