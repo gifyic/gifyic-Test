@@ -79,5 +79,5 @@ jobs:
           if [ "$Ali_Upload" = y ];then
               chmod +x Upload/Upload_Aliyunpan.sh && ./Upload/Upload_Aliyunpan.sh
           else
-              echo "\e[1;32m你没有选择上传阿里云盘哦,跳过上传\e[0m"
+              echo -e "\e[1;32m你没有选择上传阿里云盘哦,跳过上传\e[0m"
           fi
