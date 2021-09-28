@@ -58,16 +58,13 @@ jobs:
         uses: actions/checkout@main
         
       - name: Execute GSI.sh
-        if: ${{ github.event.inputs.GSI }} == 'y'
         run: |
           chmod +x GSI.sh && ./GSI.sh
           
       - name: upload onedrive
-        if: ${{ github.event.inputs.Onedrive }} == 'y'
         run: |
           chmod +x Upload/Upload_OneDrive.sh && ./Upload/Upload_OneDrive.sh
         
       - name: upload aliyunpan
-        if: ${{ github.event.inputs.Ali_Upload }} == 'y'
         run: |  
           chmod +x Upload/Upload_Aliyunpan.sh && ./Upload/Upload_Aliyunpan.sh
