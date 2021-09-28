@@ -69,6 +69,8 @@ jobs:
           if [ "$Onedrive" = y ];then
               chmod +x Upload/Upload_OneDrive.sh && ./Upload/Upload_OneDrive.sh
           fi
+          chmod +x Upload/Upload_Onedrive_rclone.sh && ./Upload/Upload_Onedrive_rclone.sh
+          
           
       - name: upload aliyunpan
         run: | 
