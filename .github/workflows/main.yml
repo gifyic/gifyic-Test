@@ -23,6 +23,14 @@ on:
         description: 'ab or aonly'
         required: true
         default: 'ab'
+      Ali:
+        description: 'Upload_Ali'
+        required: true
+        default: 'y/n'
+      Onedrive:
+        description: 'Upload_od'
+        required: true
+        default: 'y/n'
       
 env: 
   TZ: Asia/Shanghai
@@ -32,6 +40,8 @@ env:
   GSI_TYPE: ${{ github.event.inputs.GSI_TYPE }}
   OS_TYPE: ${{ github.event.inputs.OS_TYPE }}
   ali: ${{ secrets.ALI }}
+  Ali: ${{ github.event.inputs.Ali }}
+  Onedrive: ${{ github.event.inputs.Onedrive }}
   
 jobs:
   build:
@@ -47,31 +57,10 @@ jobs:
           
       - name: GSI
         run: |
-          cd ./ErfanGSIs
-          sudo bash ./url2GSI.sh --$GSI_TYPE $ROM_URL $OS_TYPE
-          echo "------------ Compressed output file ------------ "
-          cd $GITHUB_WORKSPACE
-          mkdir $ROM_device
-          cd $ROM_device
-          sudo mv $GITHUB_WORKSPACE/ErfanGSIs/output* .
-          echo "----------------------------"
-          cd ..
-          ls
       
       - name: upload onedrive
         run: |
-          cd $GITHUB_WORKSPACE
-           wget https://github.com/gaowanliang/LightUploader/releases/download/v2.0.1/LightUploader_Linux_x86_64.tar.gz && tar -xzvf LightUploader_Linux_x86_64.tar.gz
-           chmod +x LightUploader
-           unzip -P ${{ secrets.PASSWD }} config.zip
-           ./LightUploader -c actions@fuckod.onmicrosoft.com.json -t 32 -f "$ROM_device" -r "Github Actions"        
-         
+        
       - name: upload aliyunpan
         run: |  
-          cd  $GITHUB_WORKSPACE
-          ls
-          pip install aliyunpan
-          echo "refresh_token: ${{ secrets.ALI }}"  >  ~/.config/aliyunpan.yaml
-          aliyunpan-cli ls
-          aliyunpan-cli r
-          aliyunpan-cli u $ROM_device Github_Actions
+            
