@@ -23,7 +23,7 @@ on:
         description: 'ab or aonly'
         required: true
         default: 'ab'
-      Ali:
+      Ali_Upload:
         description: 'Upload_Ali'
         required: true
         default: 'y/n'
@@ -67,7 +67,7 @@ jobs:
           chmod +x Upload/Upload_OneDrive.sh && ./Upload_OneDrive.sh
         
       - name: upload aliyunpan
-        if: $Ali == 'y'
+        if: $Ali_Upload == 'y'
         run: |  
           chmod +x Upload/Upload_Aliyunpan.sh && ./Upload_Aliyunpan.sh
             
