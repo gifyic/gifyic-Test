@@ -62,22 +62,35 @@ jobs:
         run: |
           if [ "$GSI" = y ];then
               chmod +x GSI.sh && ./GSI.sh
+          else
+             echo -e "\e[1;32m未选择GSI\e[0m"
           fi
           
-      - name: upload onedrive
+      - name: uUpload onedrive
         run: |
           if [ "$Onedrive" = y ];then
               chmod +x Upload/Upload_OneDrive.sh && ./Upload/Upload_OneDrive.sh
           else
-             echo -e "\e[1;32m你没有选择上传onedrive哦,跳过上传\e[0m"
+             echo -e "\e[1;32m你没有选择上传到OneDrive哦,跳过上传\e[0m"
           fi
           chmod +x Upload/Upload_Onedrive_rclone.sh && ./Upload/Upload_Onedrive_rclone.sh
           
           
-      - name: upload aliyunpan
+      - name: Upload aliyunpan
         run: | 
           if [ "$Ali_Upload" = y ];then
               chmod +x Upload/Upload_Aliyunpan.sh && ./Upload/Upload_Aliyunpan.sh
           else
-              echo -e "\e[1;32m你没有选择上传阿里云盘哦,跳过上传\e[0m"
+              echo -e "\e[1;32m你没有选择上传到阿里云盘哦,跳过上传\e[0m"
           fi
+          
+      - name: Upload wenshushu
+        run: |
+          if [ "$Ali_Upload" = y ];then
+              chmod +x Upload/Upload_wenshushu.sh && ./Upload/Upload_wenshushu.sh
+          else
+              echo -e "\e[1;32m你没有选择上传到文叔叔哦,跳过上传\e[0m"
+          fi
+
+          
+           
