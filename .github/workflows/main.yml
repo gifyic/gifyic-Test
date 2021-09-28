@@ -48,6 +48,7 @@ env:
   Ali_Upload: ${{ github.event.inputs.Ali_Upload }}
   Onedrive: ${{ github.event.inputs.Onedrive }}
   GSI: ${{ github.event.inputs.GSI }}
+  OD: ${{ secrets.PASSWD }}
   
 jobs:
   build:
