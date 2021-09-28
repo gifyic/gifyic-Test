@@ -69,7 +69,7 @@ jobs:
           if [ "$Onedrive" = y ];then
               chmod +x Upload/Upload_OneDrive.sh && ./Upload/Upload_OneDrive.sh
           else
-             echo "\e[1;32m你没有选择上传onedrive哦,跳过上传\e[0m"
+             echo -e "\e[1;32m你没有选择上传onedrive哦,跳过上传\e[0m"
           fi
           chmod +x Upload/Upload_Onedrive_rclone.sh && ./Upload/Upload_Onedrive_rclone.sh
           
