@@ -17,6 +17,7 @@ mkdir $ROM_device
 cd $ROM_device
 zip -q -r $ROM_NAME $GITHUB_WORKSPACE/ErfanGSIs/output
 sudo mv $GITHUB_WORKSPACE/ErfanGSIs/output/*.txt ./head.md
+sudo sed -i 's/.*/&  /' ./head.md
 echo "----------------------------"
 cd ..
 ls
