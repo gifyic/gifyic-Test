@@ -55,9 +55,6 @@ jobs:
         run: |
           chmod +x GSI.sh && ./GSI.sh
           
-      - name: GSI
-        run: |
-      
       - name: upload onedrive
         run: |
         
