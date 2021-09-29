@@ -57,7 +57,7 @@ env:
   OD: ${{ secrets.PASSWD }}
   wenshushu: ${{ github.event.inputs.wenshushu }}
   Ali_Upload: ${{ github.event.inputs.Ali_Upload }} 
-  cloud189: ${{ github.event.inputs.cloud189 }}
+  cloud189: ${{ secrets.CLOUD189 }}
   
 jobs:
   build:
