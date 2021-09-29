@@ -78,8 +78,6 @@ jobs:
           else
              echo -e "\e[1;32m你没有选择上传到OneDrive哦,跳过上传\e[0m"
           fi
-          chmod +x Upload/Upload_Onedrive_rclone.sh && ./Upload/Upload_Onedrive_rclone.sh
-          
           
       - name: Upload aliyunpan
         run: | 
