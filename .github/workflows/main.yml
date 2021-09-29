@@ -52,7 +52,8 @@ env:
   Onedrive: ${{ github.event.inputs.Onedrive }}
   GSI: ${{ github.event.inputs.GSI }}
   OD: ${{ secrets.PASSWD }}
-  wenshushu:  ${{ github.event.wenshushu }}
+  wenshushu: ${{ github.event.wenshushu }}
+  Ali_Upload: ${{ github.event.Ali_Upload}} 
   
 jobs:
   build:
