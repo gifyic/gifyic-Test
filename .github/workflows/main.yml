@@ -76,7 +76,7 @@ jobs:
              echo -e "\e[1;32m未选择GSI\e[0m"
           fi
           
-      - name: uUpload onedrive
+      - name: Upload onedrive
         run: |
           if [ "$Onedrive" = y ];then
               chmod +x Upload/Upload_OneDrive.sh && ./Upload/Upload_OneDrive.sh
