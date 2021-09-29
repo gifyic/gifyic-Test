@@ -38,7 +38,7 @@ on:
       wenshushu:
         description: 'Upload_wenshushu(y or n)'
         required: true
-        default: 'y'
+        default: 'n'
       cloud189: 
         description: 'Upload_tianyiyunpan(y or n)'
         required: true
@@ -73,7 +73,7 @@ jobs:
           if [ "$GSI" = y ];then
               chmod +x GSI.sh && ./GSI.sh
           else
-             echo -e "\e[1;32m未选择GSI\e[0m"
+             echo -e "\e[1;32m未选择GSI..\e[0m"
           fi
           
       - name: Upload onedrive
@@ -81,15 +81,15 @@ jobs:
           if [ "$Onedrive" = y ] && [ -e $GITHUB_WORKSPACE/config.zip];then
               chmod +x Upload/Upload_OneDrive.sh && ./Upload/Upload_OneDrive.sh
           else
-             echo -e "\e[1;32m你没有选择上传到OneDrive或者配置文件不存在哦,跳过上传\e[0m"
+             echo -e "\e[1;32m你没有选择上传到OneDrive或者配置文件不存在哦,跳过上传...\e[0m"
           fi
           
       - name: Upload aliyunpan
         run: | 
-          if [ "$Ali_Upload" = y ];then
+          if [ "$Ali_Upload" = y ] && [ $ali ];then
               chmod +x Upload/Upload_Aliyunpan.sh && ./Upload/Upload_Aliyunpan.sh
           else
-              echo -e "\e[1;32m你没有选择上传到阿里云盘哦,跳过上传\e[0m"
+              echo -e "\e[1;32m你没有选择上传到阿里云盘哦或者没有添加refresh_token哦,跳过上传...\e[0m"
           fi
           
       - name: Upload wenshushu
@@ -97,15 +97,15 @@ jobs:
           if [ "$wenshushu" = y ];then
               chmod +x Upload/Upload_wenshushu.sh && ./Upload/Upload_wenshushu.sh
           else
-              echo -e "\e[1;32m你没有选择上传到文叔叔哦,跳过上传\e[0m"
+              echo -e "\e[1;32m你没有选择上传到文叔叔哦,跳过上传...\e[0m"
           fi
           
       - name: Upload tianyiyunpan
         run: |
-          if [ "$cloud" = y ];then
+          if [ "$cloud" = y ] && [ $cloud189 ];then
               chmod +x Upload/Upload_cloud189.sh && ./Upload/Upload_cloud189.sh
           else
-              echo -e "\e[1;32m你没有选择上传到天翼云盘哦,跳过上传\e[0m"
+              echo -e "\e[1;32m你没有选择上传到天翼云盘,或者未指定账号和密码哦，跳过上传,\e[0m"
           fi
 
           
