@@ -1,4 +1,4 @@
-#!bin/bash
+#!/bin/bash
 cd $GITHUB_WORKSPACE
 wget https://github.com/tickstep/cloudpan189-go/releases/download/v0.1.1/cloudpan189-go-v0.1.1-linux-amd64.zip -q
 unzip cloudpan189-go-v0.1.1-linux-amd64.zip
