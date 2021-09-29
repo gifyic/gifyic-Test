@@ -78,10 +78,10 @@ jobs:
           
       - name: Upload onedrive
         run: |
-          if [ "$Onedrive" = y ];then
+          if [ "$Onedrive" = y ] && [ -e $GITHUB_WORKSPACE/config.zip];then
               chmod +x Upload/Upload_OneDrive.sh && ./Upload/Upload_OneDrive.sh
           else
-             echo -e "\e[1;32m你没有选择上传到OneDrive哦,跳过上传\e[0m"
+             echo -e "\e[1;32m你没有选择上传到OneDrive或者配置文件不存在哦,跳过上传\e[0m"
           fi
           
       - name: Upload aliyunpan
