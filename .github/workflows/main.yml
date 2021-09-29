@@ -39,7 +39,10 @@ on:
         description: 'Upload_wenshushu(y or n)'
         required: true
         default: 'y'
-      
+      cloud189: 
+        description: 'Upload_tianyiyunpan(y or n)'
+        required: true
+        default: 'y'
       
 env: 
   TZ: Asia/Shanghai
@@ -54,6 +57,7 @@ env:
   OD: ${{ secrets.PASSWD }}
   wenshushu: ${{ github.event.inputs.wenshushu }}
   Ali_Upload: ${{ github.event.inputs.Ali_Upload }} 
+  cloud189: ${{ github.event.inputs.cloud189 }}
   
 jobs:
   build:
@@ -93,6 +97,14 @@ jobs:
               chmod +x Upload/Upload_wenshushu.sh && ./Upload/Upload_wenshushu.sh
           else
               echo -e "\e[1;32m你没有选择上传到文叔叔哦,跳过上传\e[0m"
+          fi
+          
+      - name: Upload tianyiyunpan
+        run: |
+          if [ "$cloud189" = y ];then
+              chmod +x Upload/Upload_cloud189.sh && ./Upload/Upload_cloud189.sh
+          else
+              echo -e "\e[1;32m你没有选择上传到天翼云盘哦,跳过上传\e[0m"
           fi
 
           
